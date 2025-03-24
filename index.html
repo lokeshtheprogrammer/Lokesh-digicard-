@@ -5,29 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>J Lokeshprabu - Digital Business Card</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; background: #f4f4f4; padding: 20px; }
-        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); max-width: 380px; margin: auto; text-align: center; }
-        .profile-img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #007bff; }
-        h2 { color: #333; margin: 10px 0; font-size: 22px; }
-        p { color: #555; margin: 5px 0; font-size: 16px; }
-        .links { margin-top: 15px; }
-        .links a { display: flex; align-items: center; justify-content: center; gap: 10px; width: 80%; margin: 8px auto; padding: 12px; background: #007bff; color: white; text-decoration: none; border-radius: 6px; font-size: 16px; transition: 0.3s; }
-        .links a:hover { background: #0056b3; }
-        .icon { width: 20px; height: 20px; vertical-align: middle; }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #007bff, #6610f2);
+            padding: 20px;
+            color: white;
+        }
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            max-width: 380px;
+            margin: auto;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.03);
+        }
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #007bff;
+        }
+        h2 {
+            color: #333;
+            margin: 10px 0;
+            font-size: 22px;
+        }
+        p {
+            color: #555;
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        .links {
+            margin-top: 15px;
+        }
+        .links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 85%;
+            margin: 8px auto;
+            padding: 12px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .links a:hover {
+            background: #0056b3;
+        }
+        .icon {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
+        .upload-btn {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            background: #28a745;
+            color: white;
+            border-radius: 5px;
+        }
+        .upload-btn:hover {
+            background: #218838;
+        }
+        input[type="file"] {
+            display: none;
+        }
     </style>
 </head>
 <body>
+
     <div class="card">
-        <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Profile Image" class="profile-img">
+        <input type="file" id="upload-photo" accept="image/*">
+        <label for="upload-photo" class="upload-btn">📷 Upload Photo</label>
+        <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Profile Image" class="profile-img" id="profile-pic">
+        
         <h2>J Lokeshprabu</h2>
         <p>📞 <a href="tel:9597676787">9597676787</a></p>
         <p>✉️ <a href="mailto:aimprabu720@gmail.com">aimprabu720@gmail.com</a></p>
+
         <div class="links">
             <a href="https://github.com/lokeshtheprogrammer" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="icon"> GitHub</a>
             <a href="https://www.linkedin.com/in/lokesh-theaienginner/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="icon"> LinkedIn</a>
             <a href="https://www.instagram.com/innopid_prince?igsh=YXRlZDU2OHF0MGMz" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon"> Instagram</a>
             <a href="https://wa.me/9597676787" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="icon"> WhatsApp</a>
+            <a href="mailto:aimprabu720@gmail.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" class="icon"> Send Email</a>
         </div>
     </div>
+
+    <script>
+        // Handle profile picture upload
+        document.getElementById('upload-photo').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profile-pic').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+
 </body>
 </html>
