@@ -1,0 +1,95 @@
+body {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.click-to-copy {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+.click-to-copy:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.social-links {
+    margin: 10px 0;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #ffcc00;
+    margin: 0 5px;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+    color: #ff9900;
+    transform: scale(1.1);
+}
+
+.vcard-btn {
+    display: inline-block;
+    background: #ffcc00;
+    color: black;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.vcard-btn:hover {
+    background: #ff9900;
+}
+
+#qrcode {
+    margin-top: 15px;
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+}
